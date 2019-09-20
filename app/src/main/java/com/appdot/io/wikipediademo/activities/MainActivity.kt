@@ -11,8 +11,6 @@ import com.appdot.io.wikipediademo.fragments.HistoryFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textMessage: TextView
-
     private val exploreFragment: ExploreFragment
     private val favouritesFragment: FavouritesFragment
     private val historyFragment: HistoryFragment
@@ -23,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         favouritesFragment = FavouritesFragment()
         historyFragment = HistoryFragment()
     }
-
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
