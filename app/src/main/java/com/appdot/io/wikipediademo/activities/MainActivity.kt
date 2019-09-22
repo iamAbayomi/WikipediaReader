@@ -8,6 +8,7 @@ import com.appdot.io.wikipediademo.R
 import com.appdot.io.wikipediademo.fragments.ExploreFragment
 import com.appdot.io.wikipediademo.fragments.FavouritesFragment
 import com.appdot.io.wikipediademo.fragments.HistoryFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        setSupportActionBar(toolbar)
 
         val navView: BottomNavigationView = findViewById(R.id.navigation)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
