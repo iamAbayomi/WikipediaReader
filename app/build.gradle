@@ -43,4 +43,8 @@ dependencies {
 
     implementation 'com.github.kittinunf.result:result:2.2.0'  //for jvm
     //implementation 'com.github.kittinunf.result:result-coroutines:2.1.0' //for kotlin's coroutine support
+
+    implementation 'org.jetbrains.anko:anko-sqlite:0.10.1'
+    implementation 'org.jetbrains.anko:anko-common:0.10.1'
+
 }

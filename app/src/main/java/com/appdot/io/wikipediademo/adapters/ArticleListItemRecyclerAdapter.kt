@@ -19,7 +19,7 @@ class ArticleListItemRecyclerAdapter : RecyclerView.Adapter<ListItemHolder>(){
 
 
     override fun getItemCount(): Int {
-        return 15
+        return currentResults.size
     }
 
     override fun onBindViewHolder(holder: ListItemHolder, position: Int) {

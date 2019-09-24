@@ -61,14 +61,10 @@ class SearchActivity : AppCompatActivity() {
                     runOnUiThread{adapter.notifyDataSetChanged()}
 
                 })
-
-
                 return false
-
             }
 
-
-            override fun onQueryTextChange(newText: String?): Boolean {
+        override fun onQueryTextChange(newText: String?): Boolean {
 
                 return false
             }

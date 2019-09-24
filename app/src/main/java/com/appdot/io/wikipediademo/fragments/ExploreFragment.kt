@@ -50,11 +50,15 @@ class ExploreFragment : Fragment() {
         exploreRecycler = view.findViewById<RecyclerView>(R.id.explore_article_recycler)
         refresher = view.findViewById<SwipeRefreshLayout>(R.id.refresher)
         searchCardView!!.setOnClickListener{
-            val searchIntent = Intent(context, SearchActivity::class.java )
-            context!!.startActivity(searchIntent)
+            activity.let {
+             val searchIntent = Intent (it, SearchActivity::class.java)
+                it?.startActivity(searchIntent)
+
+            }
         }
 
         exploreRecycler!!.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+       // exploreRecycler!!.layoutManager = LinearLayoutManager(context)
         exploreRecycler!!.adapter = adapter
 
         refresher?.setOnRefreshListener {

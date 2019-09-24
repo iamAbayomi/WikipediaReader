@@ -43,7 +43,7 @@ class ArticleDataProvider {
     }
 
     class WikipediaDataDeseriaLizer : ResponseDeserializable<WikiResult>{
-        override fun deserialize(reader: Reader) : WikiResult? = Gson().fromJson(reader, WikiResult::class.java)
+        override fun deserialize(reader: Reader) = Gson().fromJson(reader, WikiResult::class.java)
     }
 
 
