@@ -57,7 +57,7 @@ class ExploreFragment : Fragment() {
             }
         }
 
-        exploreRecycler!!.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        exploreRecycler!!.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
        // exploreRecycler!!.layoutManager = LinearLayoutManager(context)
         exploreRecycler!!.adapter = adapter
 
@@ -72,7 +72,7 @@ class ExploreFragment : Fragment() {
     private fun getRandomArticles(){
         refresher?.isRefreshing= true
         try {
-            wikiManager?.getRandom(15, { wikiResult ->
+            wikiManager?.getRandom(30, { wikiResult ->
                 adapter.currentResults.clear()
                 adapter.currentResults.addAll(wikiResult.query!!.pages)
                 activity?.runOnUiThread {

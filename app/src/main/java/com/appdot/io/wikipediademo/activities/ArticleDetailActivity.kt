@@ -3,12 +3,14 @@ package com.appdot.io.wikipediademo.activities
 import android.graphics.Bitmap
 import android.net.http.SslError
 import android.os.Bundle
+import android.os.RecoverySystem
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.webkit.*
+import com.appdot.io.wikipediademo.MyWebChromeClient
 import com.appdot.io.wikipediademo.R
 import com.appdot.io.wikipediademo.WikiApplication
 import com.appdot.io.wikipediademo.managers.WikiManager
@@ -35,27 +37,43 @@ class ArticleDetailActivity : AppCompatActivity(){
         val wikiPageJson = intent.getStringExtra("page")
         currentPage = Gson().fromJson<WikiPage>(wikiPageJson, WikiPage::class.java)
 
+ //       mListener = RecoverySystem.ProgressListener { progress: Int ->  }
+
         supportActionBar?.title = currentPage?.fullurl
 
         webView = findViewById(R.id.article_detail_webView)
 
-        webView.loadUrl(currentPage?.fullurl)
+        //webView.loadUrl("https://stackoverflow.com/questions/4331094/add-a-progress-bar-in-webview")
+        webView.loadUrl(currentPage?.fullurl.toString())
 
+        //webView.webChromeClient = object: MyWebChromeClient(this
+
+        textView.text = currentPage?.fullurl.toString()
 
         wikiManager?.addHistory(currentPage!!)
 
+        /*webView.webChromeClient = object : WebChromeClient(){
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                setProgress(newProgress *100)
+            }
+        }*/
+
         webView.webViewClient = object: WebViewClient(){
 
+
+
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                progress_circular.visibility = View.VISIBLE
+               // progress_circular.visibility = View.VISIBLE
                 return true
             }
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-                progress_circular.visibility = View.VISIBLE
+               // progress_circular.visibility = View.VISIBLE
             }
             override fun onPageFinished(view: WebView?, url: String?) {
                 progress_circular.visibility = View.GONE
             }
+
+
 
         }
 
