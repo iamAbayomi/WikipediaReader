@@ -8,8 +8,7 @@ add favourites and provides history for pages you have visited.
 Explore | Favourites | History 
 -------- | -------- | ------
 
-![Explore ](C:\Development\android-projects\WikipediaDemo\images\ExplorePage.jpeg)
-![Favourites](C:\Development\android-projects\WikipediaDemo\images\Favourites.jpeg)
-![History](C:\Development\android-projects\WikipediaDemo\images\History.jpeg)  
+![Explore ](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/ExplorePage.jpeg)
+![Favourites](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/Favourites.jpeg)
+![History](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/History.jpeg)
 
-sffsf
