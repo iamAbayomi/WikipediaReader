@@ -9,8 +9,9 @@ add favourites and provides history for pages you have visited.
 | -------- | -------- | ------|
 | ![Explore ](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/ExplorePage.jpeg)|![Favourites](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/Favourites.jpeg)| ![History](https://raw.githubusercontent.com/iamAbayomi/WikipediaDemo/master/images/History.jpeg)|
 
-## This app uses 
-## Anko
+# This App Uses 
+
+# Anko
 
 <img
 src="https://raw.githubusercontent.com/Kotlin/anko/master/doc/logo.png"
@@ -24,7 +25,7 @@ Android SDK for Java.
 Anko Commons: a lightweight library full of helpers for intents, dialogs, logging and so on;
 Anko SQLite: a query DSL and parser collection for Android SQLite;
 
-## Fuel
+# Fuel
 
 [Fuel](https://github.com/kittinunf/fuel) is the easiest HTTP networking
 library for Kotlin/Android.
