@@ -37,3 +37,6 @@ library for Kotlin/Android.
 - Add Articles to favourites
 - GEt History of Viewed Articles
 
+
+## References
+   [Plurasight Course-Building Android Apps Kotlin by Alex Dunn ](https://app.pluralsight.com/library/courses/building-android-apps-kotlin-getting-started/table-of-contents) 
