@@ -8,8 +8,6 @@ import com.appdot.io.wikipediademo.repositories.FavouritesRepository
 import com.appdot.io.wikipediademo.repositories.HistoryRepository
 
 class WikiApplication: Application() {
-
-
     private var dbHelper : ArticleDatabaseOpenHelper? = null
     private var favouritesRepository: FavouritesRepository? = null
     private var historyRepository: HistoryRepository? = null

@@ -3,9 +3,9 @@ package com.appdot.io.wikipediademo.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 
 import com.appdot.io.wikipediademo.R
@@ -24,10 +24,10 @@ import org.jetbrains.anko.yesButton
  * A simple [Fragment] subclass.
  *
  */
-class HistoryFragment : Fragment() {
+class HistoryFragment : androidx.fragment.app.Fragment() {
 
     private var wikiManager: WikiManager? = null
-    var historyRecycler: RecyclerView? = null
+    var historyRecycler: androidx.recyclerview.widget.RecyclerView? = null
     private val adapter = ArticleListItemRecyclerAdapter()
 
     init {
@@ -45,9 +45,9 @@ class HistoryFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
-        historyRecycler = view.findViewById<RecyclerView>(R.id.history_article_recycler)
+        historyRecycler = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.history_article_recycler)
 
-        historyRecycler!!.layoutManager = LinearLayoutManager(context)
+        historyRecycler!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
         historyRecycler!!.adapter = adapter
 
         return view

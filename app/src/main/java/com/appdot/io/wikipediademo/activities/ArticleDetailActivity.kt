@@ -1,15 +1,20 @@
 package com.appdot.io.wikipediademo.activities
 
+import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.net.http.SslError
 import android.os.Bundle
 import android.os.RecoverySystem
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.webkit.*
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import com.appdot.io.wikipediademo.MyWebChromeClient
 import com.appdot.io.wikipediademo.R
 import com.appdot.io.wikipediademo.WikiApplication
@@ -31,36 +36,28 @@ class ArticleDetailActivity : AppCompatActivity(){
 
         wikiManager =(applicationContext as WikiApplication).wikiManager
 
-        setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+         setSupportActionBar(toolbar)
+         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
         //get the page from the extras
         val wikiPageJson = intent.getStringExtra("page")
         currentPage = Gson().fromJson<WikiPage>(wikiPageJson, WikiPage::class.java)
-
- //       mListener = RecoverySystem.ProgressListener { progress: Int ->  }
-
+        // mListener = RecoverySystem.ProgressListener { progress: Int ->  }
         supportActionBar?.title = currentPage?.fullurl
 
-        webView = findViewById(R.id.article_detail_webView)
+        setCustomTabs()
 
-        //webView.loadUrl("https://stackoverflow.com/questions/4331094/add-a-progress-bar-in-webview")
-        webView.loadUrl(currentPage?.fullurl.toString())
+        //webView = findViewById(R.id.article_detail_webView)
+        var loadedPage : String = currentPage?.fullurl.toString()
+        //webView.loadUrl(loadedPage)
 
-        //webView.webChromeClient = object: MyWebChromeClient(this
 
-        textView.text = currentPage?.fullurl.toString()
-
+     //   editText.setText(currentPage?.fullurl.toString())
         wikiManager?.addHistory(currentPage!!)
 
-        /*webView.webChromeClient = object : WebChromeClient(){
-            override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                setProgress(newProgress *100)
-            }
-        }*/
-
-        webView.webViewClient = object: WebViewClient(){
 
 
+        /*webView.webViewClient = object: WebViewClient(){
 
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                // progress_circular.visibility = View.VISIBLE
@@ -70,13 +67,11 @@ class ArticleDetailActivity : AppCompatActivity(){
                // progress_circular.visibility = View.VISIBLE
             }
             override fun onPageFinished(view: WebView?, url: String?) {
-                progress_circular.visibility = View.GONE
+               // progress_circular.visibility = View.GONE
             }
 
-
-
         }
-
+*/
 
     }
 
@@ -114,4 +109,38 @@ class ArticleDetailActivity : AppCompatActivity(){
         return true
 
     }
+
+    fun setCustomTabs(){
+        val builder = CustomTabsIntent.Builder()
+        //modify toolbar color
+        builder.setToolbarColor(ContextCompat.getColor(this@ArticleDetailActivity, R.color.colorPrimary))
+        // add share button to overflow menu
+        builder.addDefaultShareMenuItem()
+        // add menu item to overflow
+        // builder.addMenuItem("MENU_ITEM_NAME", pendingIntent)
+        // show website title
+        builder.setShowTitle(true)
+
+        var icon: Bitmap = BitmapFactory.decodeResource(resources, android.R.drawable.save)
+
+        Intent actionIntent=
+
+        builder.setActionButton(icon, "save", )
+
+        //modify back button icon
+        //builder.setCloseButtonIcon(bitmap)
+
+
+        builder.setExitAnimations(this, android.R.anim.fade_in, android.R.anim.fade_out)
+        var uri : Uri = Uri.parse(currentPage?.fullurl.toString())
+        // build custom tabs intent
+        val customTabsIntent : CustomTabsIntent = builder.build()
+
+        //launch the url
+        customTabsIntent.launchUrl(this, uri)
+
+
+
+    }
+
 }

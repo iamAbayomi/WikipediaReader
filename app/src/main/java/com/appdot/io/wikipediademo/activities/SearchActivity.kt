@@ -2,12 +2,12 @@ package com.appdot.io.wikipediademo.activities
 
 import android.app.SearchManager
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import android.support.v7.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import com.appdot.io.wikipediademo.R
 import com.appdot.io.wikipediademo.WikiApplication
 import com.appdot.io.wikipediademo.adapters.ArticleListItemRecyclerAdapter
@@ -29,7 +29,7 @@ class SearchActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        search_results_recycler.layoutManager = LinearLayoutManager( this)
+        search_results_recycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         search_results_recycler.adapter = adapter
     }
 

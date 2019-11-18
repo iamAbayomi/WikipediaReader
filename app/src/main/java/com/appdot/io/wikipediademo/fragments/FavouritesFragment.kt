@@ -3,10 +3,10 @@ package com.appdot.io.wikipediademo.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +24,10 @@ import org.jetbrains.anko.doAsync
  * A simple [Fragment] subclass.
  *
  */
-class FavouritesFragment : Fragment() {
+class FavouritesFragment : androidx.fragment.app.Fragment() {
 
     private var wikiManager: WikiManager? = null
-    var favouritesRecycler: RecyclerView? = null
+    var favouritesRecycler: androidx.recyclerview.widget.RecyclerView? = null
     private val adapter: ArticleCardRecyclerAdapter = ArticleCardRecyclerAdapter()
 
     override fun onAttach(context: Context?) {
@@ -40,8 +40,11 @@ class FavouritesFragment : Fragment() {
         // Inflate the layout for this fragment
         val  view = inflater.inflate(R.layout.fragment_favourite, container, false)
 
-        favouritesRecycler = view.findViewById<RecyclerView>(R.id.favourites_article_recycler)
-        favouritesRecycler!!.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        favouritesRecycler = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.favourites_article_recycler)
+        favouritesRecycler!!.layoutManager = androidx.recyclerview.widget.StaggeredGridLayoutManager(
+            2,
+            androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL
+        )
         favouritesRecycler!!.adapter = adapter
 
         return view

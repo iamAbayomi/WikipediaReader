@@ -4,7 +4,7 @@
 
     <item android:id="@+id/action_search"
           app:showAsAction="always"
-          app:actionViewClass="android.support.v7.widget.SearchView"
+          app:actionViewClass="androidx.appcompat.widget.SearchView"
           android:title="search"
           >
 

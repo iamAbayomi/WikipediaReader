@@ -17,7 +17,7 @@ class WikiManager(private val provider: ArticleDataProvider,
         return provider.search(term, skip, take, handler)
     }
 
-    fun getRandom(take: Int, handler: (reuslt: WikiResult) -> Unit?) {
+    fun getRandom(take: Int, handler: (result: WikiResult) -> Unit?) {
         return provider.getRandom(take, handler)
     }
 

@@ -1,8 +1,8 @@
 package com.appdot.io.wikipediademo.activities
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import com.appdot.io.wikipediademo.R
 import com.appdot.io.wikipediademo.fragments.ExploreFragment
@@ -10,6 +10,8 @@ import com.appdot.io.wikipediademo.fragments.FavouritesFragment
 import com.appdot.io.wikipediademo.fragments.HistoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+    //MainActivity to hold Explorefragment
+    //FavouritesFragment, HistoryFragment
 class MainActivity : AppCompatActivity() {
 
     private val exploreFragment: ExploreFragment
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val historyFragment: HistoryFragment
 
 
+    //constructor to initialize Fragments
     init {
         exploreFragment = ExploreFragment()
         favouritesFragment = FavouritesFragment()

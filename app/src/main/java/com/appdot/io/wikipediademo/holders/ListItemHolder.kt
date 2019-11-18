@@ -1,7 +1,7 @@
 package com.appdot.io.wikipediademo.holders
 
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,7 +12,7 @@ import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_article_detail.view.*
 
-class ListItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ListItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     private val articleImageView: ImageView = itemView.findViewById<ImageView>(R.id.result_icon)
     private val titleTextView: TextView = itemView.findViewById<TextView>(R.id.result_title)
