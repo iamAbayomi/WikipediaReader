@@ -2,7 +2,7 @@ package com.appdot.io.wikipediareader
 
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-
+//No longer in use
 class MyWebChromeClient: WebChromeClient {
 
     private var  mListener : ProgressListener? = null
