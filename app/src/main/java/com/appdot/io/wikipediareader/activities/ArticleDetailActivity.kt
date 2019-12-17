@@ -116,11 +116,11 @@ class ArticleDetailActivity : AppCompatActivity(){
         // show website title
         builder.setShowTitle(true)
 
-        var icon: Bitmap = BitmapFactory.decodeResource(resources, android.R.drawable.save)
+       // var icon: Bitmap = BitmapFactory.decodeResource(resources, android.R.drawable.save)
 
-        Intent actionIntent=
+     //   Intent actionIntent=
 
-        builder.setActionButton(icon, "save", )
+       // builder.setActionButton(icon, "save", )
 
         //modify back button icon
         //builder.setCloseButtonIcon(bitmap)

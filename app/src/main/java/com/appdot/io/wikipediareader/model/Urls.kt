@@ -28,7 +28,7 @@ object Urls {
                 "&prop=pageimages|info" +
                 "&grnlimit=$take" +
                 "&inprop=url" +
-                "&pithumbsize=200"
+                "&pithumbsize=600"
     }
 
 }
